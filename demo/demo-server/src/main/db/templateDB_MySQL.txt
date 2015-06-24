@@ -1,0 +1,29 @@
+CREATE DATABASE db_menus;
+
+CREATE TABLE IF NOT EXISTS db_menus.autonumerical (
+  autonumerical int(10),
+  state int(4) NOT NULL)
+  ENGINE=InnoDB;
+
+CREATE TABLE IF NOT EXISTS db_menus.profiles (
+  idProfile int(4) NOT NULL,
+  profileName varchar(100) DEFAULT NULL,
+  xmlClient LONGTEXT,
+  xmlServer LONGTEXT,
+  PRIMARY KEY (idProfile))
+  ENGINE=InnoDB;
+  
+CREATE TABLE IF NOT EXISTS db_menus.users (
+  user_ varchar(50) NOT NULL,
+  password varchar(100) DEFAULT NULL,
+  idProfile int(4) DEFAULT NULL,
+  PRIMARY KEY (user_),
+  CONSTRAINT FK_profileUser FOREIGN KEY (idProfile)  REFERENCES db_menus.profiles(idProfile))
+ ENGINE=InnoDB; 
+  
+CREATE OR REPLACE VIEW db_menus.v_users as
+select user_, password, u.idProfile, profileName, xmlClient, xmlServer
+from db_menus.users u join db_menus.profiles p on u.idProfile = p.idProfile;
+
+insert into db_menus.profiles (idProfile, profileName) values (1, 'admin');
+insert into db_menus.users (user_, password, idProfile) values ('admin', 'yKUPYyw8S68n/AX6yxiDEE4dFu8=', 1);

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Form entity="" status="yes" title="SQLQueries" buttons="no">
+	<SplitPane>
+		<Column title="QueryText" expandlast="yes">
+			<Row expand="yes">
+				<Column expand="yes">
+					<MemoDataField attr="query"
+						labelvisible="no" dim="text" fontsize="14" rows="4" expand="yes" />
+				</Column>
+				<Column expand="no" valign="center">
+					<Button key="execute" text="Execute" align="center"
+						labelsize="15"/>
+				</Column>
+			</Row>
+		</Column>
+		<Table entity="resultsDynamicTable" dynamic="yes"
+			translateheader="no" />
+	</SplitPane>
+</Form>
