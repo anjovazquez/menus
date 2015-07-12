@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="EProduct" keys="idProduct" columns="productName"
+	title="formproduct">
+	<FormHeader standardbuttons="yes" />
+
+	<IntegerDataField text="idProduct" attr="productId"
+		dim="text" align="left" labelsize="16" visible="no"/>
+	<Row>
+		<TextDataField text="productName" attr="productName"
+			dim="text" align="left" labelsize="16" />
+
+		<ImageDataField attr="productImage" text="productImage"
+			dim="text" align="left" width="200" height="200"/>
+	</Row>
+	<MemoDataField text="productDescription" attr="productDescription"
+		maxlength="2000" dim="text" align="left" labelsize="16" />
+</FormExt>
