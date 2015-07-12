@@ -47,4 +47,10 @@
 	<Menu attr="Menumanagerusers">
 		<MenuItem attr="Managerusers"></MenuItem>
 	</Menu>
+	
+	<Menu attr="menumanagerproducts">
+		<MenuItem attr="managerproducts"></MenuItem>
+	</Menu>
+	
+	
 </ApplicationMenuBar>

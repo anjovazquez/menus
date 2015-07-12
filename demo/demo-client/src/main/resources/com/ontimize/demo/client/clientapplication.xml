@@ -1,30 +1,28 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<!-- File to describe the application modules-->
-<MainApplication
-   title="Ontimize Training"   
-   logindialogclass="com.ontimize.login.ShapeLoginDialog"
-   splash="com/ontimize/demo/client/images/00_login-splash.png;2"
-   loginicon="com/ontimize/demo/client/images/back_splash.png"
-   icon="$com/ontimize/demo/client/images/ontimize16x16.png"
-   preferences="OntimizeTraining.conf" 
-   logintext="session_start"
-   resources="com.ontimize.demo.client.i18n.bundle"
-   locale="es_ES"
-   encrypt="no">
-   <!--  Application configuration params  -->
-   <ReferenceLocator remotelocatorname="ServerName"
-       local="false"
-       class="com.ontimize.locator.ReferenceLocator"
-       packageorhostname="localhost"
-       port="49015"
-       checkservermessagesperiod="4000"
-   />
-   <!-- Menu and toolbar configuration -->
-    <Menu archive="menu/menu.xml" />
-    <MenuListener class="com.ontimize.demo.client.menu.AppMenuListener" />
-    <Toolbar archive="toolbar/toolbar.xml"/>
-    <ToolbarListener class="com.ontimize.gui.DefaultToolBarListener" />
-    <FormManager id="Managerabout" form="modules/administration/formabout.xml" imanager="com.ontimize.gui.BasicInteractionManager" />
-    <FormManager id="Managerusers" form="modules/administration/formusers.xml" imanager="com.ontimize.gui.BasicInteractionManager" tree="modules/administration/treemanagerusers.xml" />
-    <FormManager id="managersqlqueries" form="modules/sql/formSQLQueries.xml" delayedload="yes" imanager="com.ontimize.demo.client.modules.sql.IFMSQLQueries" />
+<!-- File to describe the application modules -->
+<MainApplication title="Ontimize Training"
+	logindialogclass="com.ontimize.login.ShapeLoginDialog"
+	splash="com/ontimize/demo/client/images/00_login-splash.png;2"
+	loginicon="com/ontimize/demo/client/images/back_splash.png" icon="$com/ontimize/demo/client/images/ontimize16x16.png"
+	preferences="OntimizeTraining.conf" logintext="session_start"
+	resources="com.ontimize.demo.client.i18n.bundle" locale="es_ES"
+	encrypt="no">
+	<!-- Application configuration params -->
+	<ReferenceLocator remotelocatorname="ServerName"
+		local="false" class="com.ontimize.locator.ReferenceLocator"
+		packageorhostname="localhost" port="49015" checkservermessagesperiod="4000" />
+	<!-- Menu and toolbar configuration -->
+	<Menu archive="menu/menu.xml" />
+	<MenuListener class="com.ontimize.demo.client.menu.AppMenuListener" />
+	<Toolbar archive="toolbar/toolbar.xml" />
+	<ToolbarListener class="com.ontimize.gui.DefaultToolBarListener" />
+	<FormManager id="Managerabout" form="modules/administration/formabout.xml"
+		imanager="com.ontimize.gui.BasicInteractionManager" />
+	<FormManager id="Managerusers" form="modules/administration/formusers.xml"
+		imanager="com.ontimize.gui.BasicInteractionManager" tree="modules/administration/treemanagerusers.xml" />
+	<FormManager id="managersqlqueries" form="modules/sql/formSQLQueries.xml"
+		delayedload="yes" imanager="com.ontimize.demo.client.modules.sql.IFMSQLQueries" />
+
+	<FormManager id="managerproducts" form="modules/products/formproduct.xml"
+		imanager="com.ontimize.demo.client.modules.products.IFMProduct" />
 </MainApplication>

@@ -6,4 +6,5 @@ GRANT DBA TO DEMO
 SET WRITE_DELAY 10
 SET SCHEMA PUBLIC
 INSERT INTO AUTONUMERICAL VALUES(1,0)
+INSERT INTO USERS VALUES('anjo','anjo','angel','vazquez',NULL)
 INSERT INTO USERS VALUES('demo','demouser','Demo','Demostration','demo.demostration@email.com')

@@ -27,3 +27,11 @@ from db_menus.users u join db_menus.profiles p on u.idProfile = p.idProfile;
 
 insert into db_menus.profiles (idProfile, profileName) values (1, 'admin');
 insert into db_menus.users (user_, password, idProfile) values ('admin', 'yKUPYyw8S68n/AX6yxiDEE4dFu8=', 1);
+
+CREATE TABLE IF NOT EXISTS db_menus.product (
+  idProduct int(10) NOT NULL,
+  productName varchar(50) DEFAULT NULL,
+  productDescription varchar(2000) DEFAULT NULL,
+  productImage blob DEFAULT NULL,
+  PRIMARY KEY (idProduct))
+  ENGINE=InnoDB;
