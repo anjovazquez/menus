@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="EAllergen" keys="idAllergen" columns="allergenName"
+	title="formallergen.xml">
+	<FormHeader standardbuttons="yes" />
+
+	<IntegerDataField text="idAllergen" attr="idAllergen"
+		dim="text" align="left" labelsize="16" visible="no" />
+	<Row expand="yes">
+		<Column expand="yes">
+			<TextDataField text="allergenName" attr="allergenName"
+				dim="text" align="left" labelsize="16" />
+		</Column>
+	</Row>
+</FormExt>

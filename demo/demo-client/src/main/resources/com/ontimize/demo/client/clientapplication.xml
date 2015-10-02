@@ -25,4 +25,8 @@
 
 	<FormManager id="managerproducts" form="modules/products/formproduct.xml"
 		imanager="com.ontimize.demo.client.modules.products.IFMProduct" />
+	<FormManager id="managerallergens" form="modules/products/formallergen.xml" tree="modules/products/treemanagerallergen.xml"
+		imanager="com.ontimize.demo.client.modules.products.IFMAllergen" />
+	<FormManager id="manageringredients" form="modules/products/formingredient.xml"
+		imanager="com.ontimize.demo.client.modules.products.IFMIngredient" tree="modules/products/treemanageringredient.xml"/>
 </MainApplication>

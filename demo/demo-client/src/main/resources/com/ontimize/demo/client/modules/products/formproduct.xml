@@ -3,7 +3,7 @@
 	title="formproduct.xml">
 	<FormHeader standardbuttons="yes" />
 
-	<IntegerDataField text="idProduct" attr="productId"
+	<IntegerDataField text="idProduct" attr="idProduct"
 		dim="text" align="left" labelsize="16" visible="no" />
 	<Row expand="yes">
 		<Column expand="yes">

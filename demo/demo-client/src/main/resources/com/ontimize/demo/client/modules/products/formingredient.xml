@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="EIngredient" keys="idIngredient" columns="ingredientName"
+	title="formingredient.xml">
+	<FormHeader standardbuttons="yes" />
+
+	<IntegerDataField text="idIngredient" attr="idIngredient"
+		dim="text" align="left" labelsize="16" visible="no" />
+	<Row expand="yes">
+		<Column expand="yes">
+			<TextDataField text="ingredientName" attr="ingredientName"
+				dim="text" align="left" labelsize="16" />
+		</Column>
+	</Row>
+</FormExt>
