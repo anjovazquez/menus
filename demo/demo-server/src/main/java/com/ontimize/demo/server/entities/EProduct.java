@@ -32,11 +32,22 @@ public class EProduct extends TableEntity {
 						(BytesBlock) keyValues.remove("productImage"));
 			} catch (Exception e) {
 				e.printStackTrace();
-//				throw new Exception();
 			}
 		}
 		return super.insert(keyValues, sessionId, con);
+	}
 
+	@Override
+	public EntityResult update(Hashtable av, Hashtable kv, int sessionId, Connection con) throws Exception {
+		if (av.containsKey("productImageName") && av.containsKey("productImage")) {
+			try {
+				((ServerLocator) locator).saveImage((String) av.get("productImageName"),
+						(BytesBlock) av.remove("productImage"));
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		return super.update(av, kv, sessionId, con);
 	}
 
 	@Override
@@ -55,7 +66,6 @@ public class EProduct extends TableEntity {
 					valProd.put("productImage", image);
 				} catch (Exception e) {
 					e.printStackTrace();
-//					throw new Exception();
 				}
 			}
 
