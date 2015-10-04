@@ -19,7 +19,22 @@
 		</Column>
 
 		<ImageDataField attr="productImage" text="productImage"
-			dim="text" align="left" width="200" height="200" emptyimage="com/ontimize/demo/client/images/empty.png" />
+			dim="text" align="left" width="200" height="200"
+			emptyimage="com/ontimize/demo/client/images/empty.png" />
 
 	</Row>
+	<TabPanel>
+
+		<Tab title="EProductIngredient">
+			<Table entity="EProductIngredient" keys="idproduct_ingredient"
+				cols="idproduct_ingredient;idProduct;idIngredient;ingredientName"
+				visiblecols="ingredientName" parentkeys="idProduct" form="formproductingredient.xml" />
+		</Tab>
+		<Tab title="EProductAllergen">
+			<Table entity="EProductAllergen" keys="idproduct_allergen"
+				cols="idproduct_allergen;idProduct;idAllergen;allergenName"
+				visiblecols="allergenName" parentkeys="idProduct" form="formproductallergen.xml" />
+
+		</Tab>
+	</TabPanel>
 </FormExt>

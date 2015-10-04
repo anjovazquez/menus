@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!-- File to describe the application modules -->
-<MainApplication title="Ontimize Training"
+<MainApplication title="BenMeSabe"
 	logindialogclass="com.ontimize.login.ShapeLoginDialog"
 	splash="com/ontimize/demo/client/images/00_login-splash.png;2"
 	loginicon="com/ontimize/demo/client/images/back_splash.png" icon="$com/ontimize/demo/client/images/ontimize16x16.png"

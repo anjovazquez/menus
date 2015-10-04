@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="EProductIngredient" keys="idproduct_ingredient"
+	title="formproductingredient.xml">
+	<FormHeader standardbuttons="yes" />
+	
+	<IntegerDataField text="idproduct_ingredient" attr="idproduct_ingredient"
+		dim="text" align="left" labelsize="16" visible="no" />
+
+
+	<ReferenceExtDataField text="idProduct" attr="idProduct"
+		entity="EProduct" cod="idProduct" cols="idProduct;productName" visiblecols="productName"
+		dim="text" align="left" labelsize="16" />
+
+	<ReferenceExtDataField text="idIngredient" attr="idIngredient"
+		entity="EIngredient" cod="idIngredient" cols="idIngredient;ingredientName" visiblecols="ingredientName"
+		dim="text" align="left" labelsize="16" />
+
+
+</FormExt>
