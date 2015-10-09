@@ -1,0 +1,120 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ontimize</groupId>
+		<artifactId>demo</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>demo-deploy</artifactId>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<packaging>war</packaging>
+	<description>${appName} Deploy</description>
+	<build>
+		<plugins>
+
+			<!-- Generation War -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${war.plugin.version}</version>
+				<configuration>
+					<packagingExcludes>META-INF/maven/**,META-INF/maven</packagingExcludes>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warName>${appName}</warName>
+					<overlays>
+						<overlay>
+							<!-- empty groupId/artifactId represents the current build -->
+							<!-- <skip>true</skip> -->
+							<excludes>
+								<exclude>WEB-INF/**</exclude>
+								<exclude>META-INF/maven/**</exclude>
+								<exclude>META-INF/maven</exclude>
+							</excludes>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>${project.parent.artifactId}-jws</artifactId>
+							<excludes>
+								<exclude>WEB-INF/**</exclude>
+								<exclude>META-INF/**</exclude>
+							</excludes>
+						</overlay>
+						<overlay>
+							<groupId>${project.groupId}</groupId>
+							<artifactId>${project.parent.artifactId}-server</artifactId>
+							<excludes>
+								<exclude>META-INF/maven/**</exclude>
+								<exclude>META-INF/maven</exclude>
+							</excludes>
+						</overlay>
+					</overlays>
+				</configuration>
+			</plugin>
+
+			<!-- copy desa -->
+			<!-- <plugin> -->
+			<!-- <groupId>org.apache.maven.plugins</groupId> -->
+			<!-- <artifactId>maven-antrun-plugin</artifactId> -->
+			<!-- <version>1.6</version> -->
+			<!-- <executions> -->
+			<!-- <execution> -->
+			<!-- <id>server-copy</id> -->
+			<!-- <goals> -->
+			<!-- <goal>run</goal> -->
+			<!-- </goals> -->
+			<!-- <phase>package</phase> -->
+			<!-- <configuration> -->
+			<!-- <target> -->
+			<!-- <sshexec host="10.10.100.9" username="imatia" password="1mat1a" -->
+			<!-- trust="yes" -->
+			<!-- command="kill -9 $(ps -Af | grep [t]omcat | grep [j]ava | awk '{print 
+				$2}')" -->
+			<!-- failonerror="no" /> -->
+			<!-- <sshexec host="10.10.100.9" username="imatia" password="1mat1a" -->
+			<!-- trust="yes" command="rm -rf /var/lib/tomcat7/webapps/cec" -->
+			<!-- failonerror="no" /> -->
+			<!-- <sshexec host="10.10.100.9" username="imatia" password="1mat1a" -->
+			<!-- trust="yes" command="rm -r /var/lib/tomcat7/webapps/cec.war" -->
+			<!-- failonerror="no" /> -->
+			<!-- <echo message="Push to server /var/lib/tomcat7/webapps" /> -->
+			<!-- <scp trust="yes" -->
+			<!-- todir="imatia:1mat1a@10.10.100.9:/var/lib/tomcat7/webapps"> -->
+			<!-- <fileset dir="${basedir}/target"> -->
+			<!-- <include name="cec.war" /> -->
+			<!-- </fileset> -->
+			<!-- </scp> -->
+			<!-- <sshexec host="10.10.100.9" username="imatia" password="1mat1a" -->
+			<!-- trust="yes" command="service tomcat start" failonerror="no" /> -->
+			<!-- . .profile &amp;&amp; /usr/share/tomcat7/bin/startup.sh -->
+			<!-- </target> -->
+			<!-- </configuration> -->
+			<!-- </execution> -->
+			<!-- </executions> -->
+			<!-- <dependencies> -->
+			<!-- <dependency> -->
+			<!-- <groupId>org.apache.ant</groupId> -->
+			<!-- <artifactId>ant-jsch</artifactId> -->
+			<!-- <version>1.9.3</version> -->
+			<!-- </dependency> -->
+			<!-- </dependencies> -->
+			<!-- </plugin> -->
+		</plugins>
+	</build>
+
+	<dependencies>
+		<!-- Project dependencies -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.parent.artifactId}-jws</artifactId>
+			<type>war</type>
+		</dependency>
+
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.parent.artifactId}-server</artifactId>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+
+</project>

@@ -1,0 +1,203 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ontimize</groupId>
+		<artifactId>demo</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<artifactId>demo-jws</artifactId>
+
+	<name>${project.groupId}:${project.artifactId}</name>
+	<packaging>war</packaging>
+
+	<description>${appName} JWS</description>
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources/jnlp</directory>
+				<targetPath>${project.build.directory}/${project.build.finalName}/webstart</targetPath>
+				<excludes>
+					<exclude>imatiakeystore</exclude>
+					<exclude>start.vm</exclude>
+				</excludes>
+			</resource>
+		</resources>
+		<plugins>
+			<!-- Generated zip for jnlp -->
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>webstart-maven-plugin</artifactId>
+				<version>${webstart.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>jnlp-inline</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<updateManifestEntries>
+						<Trusted-Library>true</Trusted-Library>
+						<Permissions>all-permissions</Permissions>
+						<Codebase>*</Codebase>
+					</updateManifestEntries>
+					<libPath>jars</libPath>
+					<codebase>${codebase}</codebase>
+					<dependencies></dependencies>
+					<jnlp>
+						<signedTemplate>
+							<targetPath>JNLP-INF</targetPath>
+							<targetName>APPLICATION_TEMPLATE.JNLP</targetName>
+							<variableArguments>
+								<variableArgument>${protocol}</variableArgument>
+								<variableArgument>-Dcom.ontimize.util.rmitunneling.cgipath=/${appNameLowerCase}/rmi</variableArgument>
+								<variableArgument>-Dcom.ontimize.util.rmitunneling.port=${port}</variableArgument>
+								<variableArgument>-Dcom.ontimize.util.rmitunneling.debug=false</variableArgument>
+								<variableArgument>-Dcom.ontimize.locator.ReferenceLocator.Port=${referencelocatorport}</variableArgument>
+								<variableArgument>-Dcom.ontimize.locator.ReferenceLocator.Hostname=${referencelocatorhost}</variableArgument>
+							</variableArguments>
+							<variableCodebase>*</variableCodebase>
+						</signedTemplate>
+						<inputTemplateResourcePath>${project.basedir}/src/main/resources/jnlp</inputTemplateResourcePath>
+						<inputTemplate>start.vm</inputTemplate>
+						<outputFile>${appNameLowerCase}.jnlp</outputFile>
+						<mainClass>com.ontimize.demo.client.ClientLauncher</mainClass>
+
+						<arguments>
+							<argument>com/ontimize/gui/labels.xml</argument>
+							<argument>com/ontimize/demo/client/clientapplication.xml</argument>
+<!-- 							<argument>-conf</argument> -->
+<!-- 							<argument>com/ontimize/demo/client/conf/cecXmlConfigurationParameters.xml</argument> -->
+							<argument>${protocol}</argument>
+							<argument>-Dcom.ontimize.util.rmitunneling.cgipath=/${appName}/rmi</argument>
+							<argument>-Dcom.ontimize.util.rmitunneling.port=${port}</argument>
+							<argument>-Dcom.ontimize.util.rmitunneling.debug=false</argument>
+							<argument>-Dcom.ontimize.locator.ReferenceLocator.Port=${referencelocatorport}</argument>
+							<argument>-Dcom.ontimize.locator.ReferenceLocator.Hostname=${referencelocatorhost}</argument>
+							<!-- <argument>-Dcom.ontimize.gui.lafclassname=com.imatia.cec.management.client.laf.CECLookAndFeel</argument> -->
+							<!-- <argument>-Dcom.ontimize.gui.lafstyle=com/imatia/cec/management/client/laf/style.css</argument> -->
+						</arguments>
+					</jnlp>
+					<unsignAlreadySignedJars>true</unsignAlreadySignedJars>
+					<pack200>
+						<enabled>true</enabled>
+					</pack200>
+					<gzip>true</gzip>
+					<sign>
+						<verify>false</verify>
+
+						<sigservlet>http://192.168.20.14:8080/RemoteJarSigner/SignerServlet</sigservlet>
+						<sigservletappname>${appNameLowerCase}</sigservletappname>
+						<sigservletlazy>true</sigservletlazy>
+						<sigservletforce>false</sigservletforce>
+
+					</sign>
+					<verbose>false</verbose>
+
+				</configuration>
+			</plugin>
+
+
+			<!-- Unzip generated zip -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>${antrun.plugin.version}</version>
+				<executions>
+					<execution>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<tasks>
+						<unzip src="${project.build.directory}/${project.build.finalName}.zip"
+							dest="${project.build.directory}/${project.build.finalName}/webstart" />
+					</tasks>
+				</configuration>
+			</plugin>
+
+			<!-- Generation War -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>${war.plugin.version}</version>
+				<configuration>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+					<warName>${appNameLowerCase}-jws</warName>
+					<packagingExcludes>WEB-INF/**,WEB-INF,META-INF</packagingExcludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+
+
+
+
+	<dependencies>
+		<!-- Project dependencies -->
+		<dependency>
+			<groupId>${project.groupId}</groupId>
+			<artifactId>${project.parent.artifactId}-client</artifactId>
+		</dependency>
+
+	</dependencies>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<properties>
+				<codebase>http://52.10.245.28:8080/demo/webstart</codebase>
+				<baseport>80</baseport>
+				<referencelocatorhost>52.10.245.28</referencelocatorhost>
+				<referencelocatorport>59200</referencelocatorport>
+				<port>8080</port>
+				<protocol>-nathttp</protocol>
+			</properties>
+		</profile>
+		<profile>
+			<id>desa</id>
+			<properties>
+				<codebase>http://52.10.245.28:8080/demo/webstart</codebase>
+				<baseport>80</baseport>
+				<referencelocatorhost>52.10.245.28</referencelocatorhost>
+				<referencelocatorport>59200</referencelocatorport>
+				<port>8080</port>
+				<protocol>-nathttp</protocol>
+			</properties>
+		</profile>
+		<profile>
+			<id>test</id>
+			<properties>
+				<codebase>http://10.10.100.9:8008/cec/webstart</codebase>
+				<baseport>80</baseport>
+				<referencelocatorhost>10.10.100.9</referencelocatorhost>
+				<referencelocatorport>59200</referencelocatorport>
+				<port>80</port>
+				<protocol>-nathttp</protocol>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>pre-pro</id>
+			<properties>
+				<codebase>http://10.10.100.9:8008/cec/webstart</codebase>
+				<baseport>80</baseport>
+				<referencelocatorhost>10.10.100.9</referencelocatorhost>
+				<referencelocatorport>59200</referencelocatorport>
+				<port>80</port>
+				<protocol>-nathttp</protocol>
+			</properties>
+		</profile>
+
+	</profiles>
+
+</project>

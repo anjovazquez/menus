@@ -8,7 +8,7 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>demo-common</artifactId>
-	<name>demo-common</name>
+	<name>${project.groupId}:${project.artifactId}</name>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -50,12 +50,10 @@
 		<dependency>
 			<groupId>com.ontimize</groupId>
 			<artifactId>ontimize-core</artifactId>
-			<version>${ontimize.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
-			<version>${logback.version}</version>
 		</dependency>
 	</dependencies>
 </project>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<jnlp spec="1.0+" codebase="$jnlpCodebase" href="demo.jnlp">
+
+  <information>
+  	<title>BenMeSabe</title> 
+  	<vendor>BenMeSabe</vendor> 
+    <homepage href="index.html" /> 
+  	<description>BenMeSabe</description> 
+  	<description kind="short">BenMeSabe</description> 
+	<icon href="cec.ico" kind="shortcut"/>
+ 
+   	<shortcut online="true">
+        <desktop/>
+   	</shortcut>
+  </information>
+
+  <security>
+  	<all-permissions/> 
+  </security>
+
+  <resources>
+
+	<java version="1.7+" initial-heap-size="128m" max-heap-size="512m"/>
+	
+	$dependencies	
+	
+  </resources>
+  
+
+  <application-desc main-class="$mainClass">
+  	$arguments
+  </application-desc>
+</jnlp>

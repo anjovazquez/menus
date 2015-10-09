@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.ontimize</groupId>
@@ -7,7 +8,11 @@
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>demo-client</artifactId>
-	<name>demo-client</name>
+	<name>${project.groupId}:${project.artifactId}</name>
+	<packaging>jar</packaging>
+
+	<description>${appName} client</description>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
@@ -47,19 +52,16 @@
 	</build>
 	<dependencies>
 		<dependency>
-			<groupId>com.ontimize</groupId>
+			<groupId>${project.groupId}</groupId>
 			<artifactId>demo-common</artifactId>
-			<version>${project.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.ontimize</groupId>
 			<artifactId>ontimize-more-plaf-j7</artifactId>
-			<version>${plaf.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.ontimize</groupId>
 			<artifactId>ontimize-more-plaf-styles-white</artifactId>
-			<version>${plaf-style.version}</version>
 		</dependency>
 	</dependencies>
 	<profiles>
