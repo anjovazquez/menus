@@ -7,11 +7,15 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Hashtable;
+import java.util.List;
 
+import com.ontimize.demo.common.IBenMeSabeReferenceLocator;
+import com.ontimize.demo.common.dto.NutritionalInformationCategory;
+import com.ontimize.demo.server.ws.bedca.BedcaWSHelper;
 import com.ontimize.locator.SecureReferenceLocator;
 import com.ontimize.util.remote.BytesBlock;
 
-public class ServerLocator extends SecureReferenceLocator {
+public class ServerLocator extends SecureReferenceLocator implements IBenMeSabeReferenceLocator{
 	
 	private String imagesFilePath;
 
@@ -72,6 +76,13 @@ public class ServerLocator extends SecureReferenceLocator {
 //		throw new ImageNotFoundException(imageId);
 		throw new Exception();
 	}
+
+	public List<NutritionalInformationCategory> getNutritionalInformation(
+			String ingredientId) throws Exception {
+		return BedcaWSHelper.getInstance().mapNutritionalInformationListToComponentList(BedcaWSHelper.getInstance().getNutritionalInformation(ingredientId));
+	}
+
+
 	
 	
 	
