@@ -57,6 +57,8 @@
 								<variableArgument>-Dcom.ontimize.util.rmitunneling.debug=false</variableArgument>
 								<variableArgument>-Dcom.ontimize.locator.ReferenceLocator.Port=${referencelocatorport}</variableArgument>
 								<variableArgument>-Dcom.ontimize.locator.ReferenceLocator.Hostname=${referencelocatorhost}</variableArgument>
+								<variableArgument>-Dcom.ontimize.gui.lafclassname=com.ontimize.plaf.OntimizeLookAndFeel</variableArgument> 
+								<variableArgument>-Dcom.ontimize.gui.lafstyle="com/ontimize/plaf/style/whiteStyle.css</variableArgument>
 							</variableArguments>
 							<variableCodebase>*</variableCodebase>
 						</signedTemplate>
@@ -76,8 +78,8 @@
 							<argument>-Dcom.ontimize.util.rmitunneling.debug=false</argument>
 							<argument>-Dcom.ontimize.locator.ReferenceLocator.Port=${referencelocatorport}</argument>
 							<argument>-Dcom.ontimize.locator.ReferenceLocator.Hostname=${referencelocatorhost}</argument>
-							<!-- <argument>-Dcom.ontimize.gui.lafclassname=com.imatia.cec.management.client.laf.CECLookAndFeel</argument> -->
-							<!-- <argument>-Dcom.ontimize.gui.lafstyle=com/imatia/cec/management/client/laf/style.css</argument> -->
+							<argument>-Dcom.ontimize.gui.lafclassname=com.ontimize.plaf.OntimizeLookAndFeel</argument> 
+							<argument>-Dcom.ontimize.gui.lafstyle="com/ontimize/plaf/style/whiteStyle.css</argument> 
 						</arguments>
 					</jnlp>
 					<unsignAlreadySignedJars>true</unsignAlreadySignedJars>
@@ -155,10 +157,10 @@
 				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
-				<codebase>http://52.10.245.28:8080/demo/webstart</codebase>
+				<codebase>http://52.26.71.31:8080/demo/webstart</codebase>
 				<baseport>80</baseport>
-				<referencelocatorhost>52.10.245.28</referencelocatorhost>
-				<referencelocatorport>59200</referencelocatorport>
+				<referencelocatorhost>52.26.71.31</referencelocatorhost>
+				<referencelocatorport>49015</referencelocatorport>
 				<port>8080</port>
 				<protocol>-nathttp</protocol>
 			</properties>
@@ -166,10 +168,10 @@
 		<profile>
 			<id>desa</id>
 			<properties>
-				<codebase>http://52.10.245.28:8080/demo/webstart</codebase>
+				<codebase>http://52.26.71.31:8080/demo/webstart</codebase>
 				<baseport>80</baseport>
-				<referencelocatorhost>52.10.245.28</referencelocatorhost>
-				<referencelocatorport>59200</referencelocatorport>
+				<referencelocatorhost>52.26.71.31</referencelocatorhost>
+				<referencelocatorport>49015</referencelocatorport>
 				<port>8080</port>
 				<protocol>-nathttp</protocol>
 			</properties>
@@ -180,7 +182,7 @@
 				<codebase>http://10.10.100.9:8008/cec/webstart</codebase>
 				<baseport>80</baseport>
 				<referencelocatorhost>10.10.100.9</referencelocatorhost>
-				<referencelocatorport>59200</referencelocatorport>
+				<referencelocatorport>49015</referencelocatorport>
 				<port>80</port>
 				<protocol>-nathttp</protocol>
 			</properties>
@@ -192,7 +194,7 @@
 				<codebase>http://10.10.100.9:8008/cec/webstart</codebase>
 				<baseport>80</baseport>
 				<referencelocatorhost>10.10.100.9</referencelocatorhost>
-				<referencelocatorport>59200</referencelocatorport>
+				<referencelocatorport>49015</referencelocatorport>
 				<port>80</port>
 				<protocol>-nathttp</protocol>
 			</properties>

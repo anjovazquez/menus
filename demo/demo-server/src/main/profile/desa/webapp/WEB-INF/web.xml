@@ -21,20 +21,10 @@
 		<servlet-class>com.ontimize.util.rmitunneling.ServletHandler</servlet-class>
 		<init-param>
 			<param-name>ports</param-name>
-			<param-value>59200</param-value>
+			<param-value>49015</param-value>
 		</init-param>
 	</servlet>
 
-<!-- 	<servlet> -->
-<!-- 		<servlet-name>ServletLink</servlet-name> -->
-<!-- 		<description>ServletLink</description> -->
-<!-- 		<servlet-class>ServletLink</servlet-class> -->
-<!-- 		<init-param> -->
-<!-- 			<param-name>link</param-name> -->
-<!-- 			<param-value>59200</param-value> -->
-<!-- 		</init-param> -->
-<!-- 		<load-on-startup>1</load-on-startup> -->
-<!-- 	</servlet> -->
 
 	<!-- <servlet> <servlet-name>JNLPNATServletHandler</servlet-name> <servlet-class>com.ontimize.util.rmitunneling.JNLPNatServletHandler</servlet-class> 
 		</servlet> -->

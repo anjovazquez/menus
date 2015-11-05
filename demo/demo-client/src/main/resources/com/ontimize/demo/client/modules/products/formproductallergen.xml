@@ -6,7 +6,6 @@
 	<IntegerDataField text="idproduct_allergen" attr="idproduct_allergen"
 		dim="text" align="left" labelsize="16" visible="no" />
 
-
 	<ReferenceExtDataField text="idProduct" attr="idProduct"
 		entity="EProduct" cod="idProduct" cols="idProduct;productName" visiblecols="productName"
 		dim="text" align="left" labelsize="16" />

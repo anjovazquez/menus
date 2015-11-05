@@ -49,6 +49,8 @@
 	</Menu>
 	
 	<Menu attr="menumanagerproducts">
+		<MenuItem attr="managercompany"></MenuItem>
+		<MenuItem attr="managermenu"></MenuItem>
 		<MenuItem attr="managerproducts"></MenuItem>
 		<MenuItem attr="manageringredients"></MenuItem>
 		<MenuItem attr="managerallergens"></MenuItem>
