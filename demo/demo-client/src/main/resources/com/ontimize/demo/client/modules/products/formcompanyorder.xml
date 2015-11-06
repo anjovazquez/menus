@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="None" keys="None" title="formcompanyorder.xml"
+	buttons="no" separator="no">
+	<FormHeader standardbuttons="no" />
+
+	<Row height="25" />
+	<ReferenceExtDataField text="idCompany" attr="idCompany"
+		entity="ECompany" cod="idCompany" cols="idCompany;companyName"
+		visiblecols="companyName" dim="text" align="left" labelsize="16"
+		visible="yes" />
+	<Button key="bSearch" text="bSearch" />
+	<Row height="25" />
+	<Row expand="yes">
+		<Column expand="yes">
+			<Table entity="EOrder" keys="idOrder"
+				cols="idOrder;orderName;tableNo;orderDate" visiblecols="orderName;tableNo;orderDate"
+				parentkeys="idCompany" form="formorder.xml" />
+
+		</Column>
+
+		<Column expand="yes">
+			<Table entity="EOrderLine" keys="idOrderLine"
+				cols="idOrderLine;idOrder;idProduct;productName;orderName"
+				visiblecols="productName;orderName" parentkeys="idOrder" form="formorderline.xml" />
+
+		</Column>
+
+	</Row>
+</FormExt>

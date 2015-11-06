@@ -57,7 +57,7 @@
 								<variableArgument>-Dcom.ontimize.util.rmitunneling.debug=false</variableArgument>
 								<variableArgument>-Dcom.ontimize.locator.ReferenceLocator.Port=${referencelocatorport}</variableArgument>
 								<variableArgument>-Dcom.ontimize.locator.ReferenceLocator.Hostname=${referencelocatorhost}</variableArgument>
-								<variableArgument>-Dcom.ontimize.gui.lafclassname=com.ontimize.plaf.OntimizeLookAndFeel</variableArgument> 
+								<variableArgument>-Dcom.ontimize.gui.lafclassname=com.ontimize.plaf.OntimizeLookAndFeel</variableArgument>
 								<variableArgument>-Dcom.ontimize.gui.lafstyle="com/ontimize/plaf/style/whiteStyle.css</variableArgument>
 							</variableArguments>
 							<variableCodebase>*</variableCodebase>
@@ -70,16 +70,16 @@
 						<arguments>
 							<argument>com/ontimize/gui/labels.xml</argument>
 							<argument>com/ontimize/demo/client/clientapplication.xml</argument>
-<!-- 							<argument>-conf</argument> -->
-<!-- 							<argument>com/ontimize/demo/client/conf/cecXmlConfigurationParameters.xml</argument> -->
+							<argument>-conf</argument>
+							<argument>com/ontimize/demo/client/conf/defaultXmlConfigurationParameters.xml</argument>
 							<argument>${protocol}</argument>
 							<argument>-Dcom.ontimize.util.rmitunneling.cgipath=/${appName}/rmi</argument>
 							<argument>-Dcom.ontimize.util.rmitunneling.port=${port}</argument>
 							<argument>-Dcom.ontimize.util.rmitunneling.debug=false</argument>
 							<argument>-Dcom.ontimize.locator.ReferenceLocator.Port=${referencelocatorport}</argument>
 							<argument>-Dcom.ontimize.locator.ReferenceLocator.Hostname=${referencelocatorhost}</argument>
-							<argument>-Dcom.ontimize.gui.lafclassname=com.ontimize.plaf.OntimizeLookAndFeel</argument> 
-							<argument>-Dcom.ontimize.gui.lafstyle="com/ontimize/plaf/style/whiteStyle.css</argument> 
+							<argument>-Dcom.ontimize.gui.lafclassname=com.ontimize.plaf.OntimizeLookAndFeel</argument>
+							<argument>-Dcom.ontimize.gui.lafstyle="com/ontimize/plaf/style/whiteStyle.css</argument>
 						</arguments>
 					</jnlp>
 					<unsignAlreadySignedJars>true</unsignAlreadySignedJars>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="EOrderLine" keys="idOrderLine" title="formorderline.xml"
+	buttons="yes" separator="yes">
+	<FormHeader standardbuttons="yes" />
+
+	<Row height="25" />
+	<IntegerDataField text="idOrderLine" attr="idOrderLine" dim="text"
+		align="left" labelsize="16" visible="no" />
+		
+	<ReferenceExtDataField text="idOrder" attr="idOrder"
+		entity="EOrder" cod="idOrder" cols="idOrder;orderName"
+		visiblecols="orderName" dim="text" align="left" labelsize="16"
+		visible="yes" />
+		
+		
+	<ReferenceExtDataField text="idProduct" attr="idProduct"
+		entity="EProduct" cod="idProduct" cols="idProduct;productName"
+		visiblecols="productName" dim="text" align="left" labelsize="16"
+		visible="yes" />
+</FormExt>

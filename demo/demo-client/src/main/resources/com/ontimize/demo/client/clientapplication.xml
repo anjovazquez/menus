@@ -32,9 +32,9 @@
 		tree="modules/products/treemanageringredient.xml" />
 
 	<FormManager id="managercompany" form="modules/products/formcompany.xml"
-		imanager="com.ontimize.demo.client.modules.products.IFMCompany"
-		tree="modules/products/treemanagercompany.xml" />
+		imanager="com.ontimize.demo.client.modules.products.IFMCompany" tree="modules/products/treemanagercompany.xml" />
 	<FormManager id="managermenu" form="modules/products/formmenu.xml"
-		imanager="com.ontimize.demo.client.modules.products.IFMMenu"
-		tree="modules/products/treemanagermenu.xml" />
+		imanager="com.ontimize.demo.client.modules.products.IFMMenu" tree="modules/products/treemanagermenu.xml" />
+	<FormManager id="managerorder" form="modules/products/formcompanyorder.xml"
+		imanager="com.ontimize.demo.client.modules.products.IFMCompanyOrder" />
 </MainApplication>

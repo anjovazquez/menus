@@ -9,9 +9,15 @@
 		<Column expand="yes">
 			<TextDataField text="companyName" attr="companyName"
 				dim="text" align="left" labelsize="16" />
-			
+
 			<TextDataField text="companyLogoUrl" attr="companyLogoUrl"
 				dim="text" align="left" labelsize="16" />
+		</Column>
+
+		<Column expand="yes">
+			<ImageDataField attr="companyLogoUrl" text="companyLogoUrl"
+				dim="no" size="250" align="left" width="200" height="200"
+				emptyimage="com/ontimize/demo/client/images/empty.png" />
 		</Column>
 	</Row>
 

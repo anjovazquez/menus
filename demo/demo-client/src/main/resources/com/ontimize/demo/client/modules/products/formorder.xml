@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="EOrder" keys="idOrder" title="formorder.xml"
+	buttons="yes" separator="yes">
+	<FormHeader standardbuttons="yes" />
+
+	<Row height="25" />
+	<IntegerDataField text="idOrder" attr="idOrder" dim="text"
+		align="left" labelsize="16" visible="no" />
+
+	<Row expand="yes">
+		<Column expand="yes">
+			<TextDataField text="orderName" attr="orderName" dim="text"
+				align="left" labelsize="16" />
+
+			<HourDateDataField text="orderDate" attr="orderDate"
+				dim="text" align="left" labelsize="16" />
+		</Column>
+
+		<Column expand="yes">
+			<TextDataField text="tableNo" attr="tableNo" dim="text"
+				align="left" labelsize="16" />
+			<ReferenceExtDataField text="idCompany" attr="idCompany"
+				entity="ECompany" cod="idCompany" cols="idCompany;companyName"
+				visiblecols="companyName" dim="text" align="left" labelsize="16"
+				visible="yes" />
+		</Column>
+	</Row>
+
+	<Row height="25" />
+	<Row expand="yes">
+
+		<Column expand="yes">
+			<Table entity="EOrderLine" keys="idOrderLine"
+				cols="idOrderLine;idOrder;idProduct;productName;orderName"
+				visiblecols="productName;orderName" parentkeys="idOrder" form="formorderline.xml" />
+
+		</Column>
+
+	</Row>
+</FormExt>

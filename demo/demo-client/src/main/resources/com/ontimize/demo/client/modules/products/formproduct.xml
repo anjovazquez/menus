@@ -14,12 +14,12 @@
 				dim="text" align="left" labelsize="16" />
 
 			<MemoDataField text="productDescription" attr="productDescription"
-				maxlength="2000" dim="text" align="left" labelsize="16" />
+				maxlength="2000" dim="text" align="left" labelsize="16" rows="6" />
 
 		</Column>
 
 		<ImageDataField attr="productImage" text="productImage"
-			dim="text" align="left" width="200" height="200"
+			dim="no" size="250" align="left" width="200" height="200"
 			emptyimage="com/ontimize/demo/client/images/empty.png" />
 
 	</Row>
