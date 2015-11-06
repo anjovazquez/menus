@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="EMenu" keys="idMenu" columns="menuName"
+	title="formmenu.xml">
+	<FormHeader standardbuttons="yes" />
+
+	<IntegerDataField text="idMenu" attr="idMenu"
+		dim="text" align="left" labelsize="16" visible="no" />
+	<Row expand="yes">
+		<Column expand="yes">
+			<TextDataField text="menuName" attr="menuName"
+				dim="text" align="left" labelsize="16" />
+		</Column>
+	</Row>
+	
+	<Table entity="EMenuProduct" keys="idMenuProduct"
+		cols="idMenuProduct;idMenu;idProduct;menuName;productName"
+		visiblecols="menuName;productName" parentkeys="idMenu" form="formmenuproduct.xml" />
+</FormExt>

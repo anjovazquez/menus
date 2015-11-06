@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="ECompanyMenu" keys="idCompanyMenu"
+	title="formcompanymenu.xml">
+	<FormHeader standardbuttons="yes" />
+
+	<IntegerDataField text="idCompanyMenu" attr="idCompanyMenu"
+		dim="text" align="left" labelsize="16" visible="no" />
+
+	<ReferenceExtDataField text="idCompany" attr="idCompany"
+		entity="ECompany" cod="idCompany" cols="idCompany;companyName" visiblecols="companyName"
+		dim="text" align="left" labelsize="16" />
+
+	<ReferenceExtDataField text="idMenu" attr="idMenu"
+		entity="EMenu" cod="idMenu" cols="idMenu;menuName" visiblecols="menuName"
+		dim="text" align="left" labelsize="16" />
+
+
+</FormExt>

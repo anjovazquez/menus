@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="ECompany" keys="idCompany" columns="companyName"
+	title="formcompany.xml">
+	<FormHeader standardbuttons="yes" />
+
+	<IntegerDataField text="idCompany" attr="idCompany"
+		dim="text" align="left" labelsize="16" visible="no" />
+	<Row expand="yes">
+		<Column expand="yes">
+			<TextDataField text="companyName" attr="companyName"
+				dim="text" align="left" labelsize="16" />
+			
+			<TextDataField text="companyLogoUrl" attr="companyLogoUrl"
+				dim="text" align="left" labelsize="16" />
+		</Column>
+	</Row>
+
+	<Table entity="ECompanyMenu" keys="idCompanyMenu"
+		cols="idCompanyMenu;idCompany;idMenu;menuName;companyName"
+		visiblecols="menuName;companyName" parentkeys="idCompany" form="formcompanymenu.xml" />
+</FormExt>

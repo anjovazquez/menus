@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<Node entity="EMenu"
+   text="EMenu"
+   attr="idMenu;menuName"
+   hideattr="idMenu"
+   form="formmenu.xml"
+   keys="idMenu"
+   separator=" ">
+</Node>
