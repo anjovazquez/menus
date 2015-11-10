@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="None" keys="None" columns="type"
+	title="formfiltercustomerrequest.xml" buttons="no">
+	<FormHeader standardbuttons="no" />
+
+	<ReferenceExtDataField text="idCompany" attr="idCompany"
+		entity="ECompany" cod="idCompany" cols="idCompany;companyName"
+		visiblecols="companyName" dim="text" align="left" labelsize="16" />
+
+	<Table entity="ECustomerRequest" key="idCustomerRequest"
+		cols="idCustomerRequest;type;idCompany;tableNo" visiblecols="type;idCompany;tableNo" />
+</FormExt>

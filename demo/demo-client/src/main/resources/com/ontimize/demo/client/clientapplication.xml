@@ -37,4 +37,10 @@
 		imanager="com.ontimize.demo.client.modules.products.IFMMenu" tree="modules/products/treemanagermenu.xml" />
 	<FormManager id="managerorder" form="modules/products/formcompanyorder.xml"
 		imanager="com.ontimize.demo.client.modules.products.IFMCompanyOrder" />
+
+
+	<FormManager id="managercustomerrequest" form="modules/customer/formcustomerrequest.xml"
+		imanager="com.ontimize.demo.client.modules.customer.IFMCustomerRequest" />
+	<FormManager id="managerfiltercustomerrequest" form="modules/customer/formfiltercustomerrequest.xml"
+		imanager="com.ontimize.demo.client.modules.customer.IFMFilterCustomerRequest" />
 </MainApplication>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="ECustomerRequest" keys="idCustomerRequest"
+	columns="type" title="formcustomerrequest.xml">
+	<FormHeader standardbuttons="yes" />
+
+	<IntegerDataField text="idCustomerRequest" attr="idCustomerRequest"
+		dim="text" align="left" labelsize="16" visible="no" />
+
+	<TextDataField text="type" attr="type" dim="text" align="left"
+		labelsize="16" />
+	<ReferenceExtDataField text="idCompany" attr="idCompany"
+		entity="ECompany" cod="idCompany" cols="idCompany;companyName"
+		visiblecols="companyName" dim="text" align="left" labelsize="16" />
+
+	<TextDataField text="tableNo" attr="tableNo" dim="text"
+		align="left" labelsize="16" />
+</FormExt>

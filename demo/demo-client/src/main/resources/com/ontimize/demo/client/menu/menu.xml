@@ -47,6 +47,11 @@
 	<Menu attr="Menumanagerusers">
 		<MenuItem attr="Managerusers"></MenuItem>
 	</Menu>
+	
+	<Menu attr="menumanagercustomerrequest">
+		<MenuItem attr="managercustomerrequest" />
+		<MenuItem attr="managerfiltercustomerrequest" />
+	</Menu>
 
 	<Menu attr="menumanagerorders">
 		<MenuItem attr="managerorder" />
