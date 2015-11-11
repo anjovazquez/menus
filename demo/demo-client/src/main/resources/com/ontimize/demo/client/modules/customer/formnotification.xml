@@ -6,7 +6,7 @@
 	<IntegerDataField text="idNotification" attr="idNotification"
 		dim="text" align="left" labelsize="16" visible="no" />
 
-	<MemoDataField text="token" attr=""token"" dim="text" align="left"
+	<MemoDataField text="token" attr="token" dim="text" align="left"
 		labelsize="16" rows="5"/>
 	<MemoDataField text="data" attr="data" dim="text" align="left"
 		labelsize="16" rows="10"/>
