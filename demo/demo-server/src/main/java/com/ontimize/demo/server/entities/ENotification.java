@@ -7,6 +7,7 @@ import java.util.Properties;
 import com.ontimize.db.DatabaseConnectionManager;
 import com.ontimize.db.EntityResult;
 import com.ontimize.db.TableEntity;
+import com.ontimize.demo.server.notification.NotificationManager;
 import com.ontimize.locator.EntityReferenceLocator;
 
 public class ENotification extends TableEntity {
@@ -22,10 +23,12 @@ public class ENotification extends TableEntity {
 	}
 
 	@Override
-	public EntityResult insert(Hashtable attributesValues, int sessionId, Connection con) throws Exception {
-		EntityResult result = super.insert(attributesValues, sessionId, con);
-
-		// NotificationManager notificac
+	public EntityResult insert(Hashtable kv, int sessionId, Connection con) throws Exception {
+		EntityResult result = super.insert(kv, sessionId, con);
+		
+		String token = (String)kv.get("token");
+		String jsonData = (String)kv.get("data");
+		NotificationManager.getInstance().sendNotificationToUser(token, jsonData);
 
 		return result;
 	}

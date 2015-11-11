@@ -43,4 +43,7 @@
 		imanager="com.ontimize.demo.client.modules.customer.IFMCustomerRequest" />
 	<FormManager id="managerfiltercustomerrequest" form="modules/customer/formfiltercustomerrequest.xml"
 		imanager="com.ontimize.demo.client.modules.customer.IFMFilterCustomerRequest" />
+		
+	<FormManager id="managernotification" form="modules/customer/formnotification.xml"
+		imanager="com.ontimize.demo.client.modules.customer.IFMNotification" />
 </MainApplication>

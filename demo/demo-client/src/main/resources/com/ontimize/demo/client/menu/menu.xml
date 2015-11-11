@@ -51,6 +51,7 @@
 	<Menu attr="menumanagercustomerrequest">
 		<MenuItem attr="managercustomerrequest" />
 		<MenuItem attr="managerfiltercustomerrequest" />
+		<MenuItem attr="managernotification"/>
 	</Menu>
 
 	<Menu attr="menumanagerorders">
