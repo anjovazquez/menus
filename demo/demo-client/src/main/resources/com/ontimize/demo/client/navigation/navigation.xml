@@ -1,0 +1,31 @@
+<NavigationMenu imagebasepath="com/ontimize/demo/client/images/"
+	fiximg="com/ontimize/demo/client/images/back_navigator.png"
+	fiximgposition="south_west" img="com/ontimize/demo/client/images/whitebg.png">
+	<!-- img="com/imatia/xanela/client/images/whitebg.png" -->
+	<MenuGroup header="menumanagercustomerrequest"
+		icons='toolbar/office_building_bw.png;toolbar/handshake2.png;toolbar/businessperson2.png'
+		options='managercustomerrequest;managerfiltercustomerrequest;managernotification'
+		menugroupclass="com.ontimize.demo.client.navigation.CustomMenuGroupGUI"
+		x='400' y='100' width='260' height='250' bgHeader='#b4107e' bgBody='white'
+		fg='#9c0909' borderColor='#000099'>
+	</MenuGroup>
+
+	<MenuGroup header="menumanagerorders" icons='toolbar/tables2.png'
+		options='managerorder'
+		menugroupclass="com.ontimize.demo.client.navigation.CustomMenuGroupGUI"
+		x='700' y='100' width='260' height='80' bgHeader='#b4107e' bgBody='white'
+		fg='#9c0909' borderColor='#000099'>
+	</MenuGroup>
+
+
+	<MenuGroup header="menumanagerproducts" icons='toolbar/tables2.png;toolbar/tables2.png;toolbar/tables2.png;toolbar/tables2.png;toolbar/tables2.png'
+		options='managercompany;managermenu;managerproducts;manageringredients;managerallergens'
+		menugroupclass="com.ontimize.demo.client.navigation.CustomMenuGroupGUI"
+		x='800' y='100' width='300' height='280' bgHeader='#b4107e' bgBody='white'
+		fg='#9c0909' borderColor='#000099'>
+	</MenuGroup>
+
+	<!-- 0x9c0909 grana -->
+	<!-- 0x000099 azul -->
+
+</NavigationMenu>

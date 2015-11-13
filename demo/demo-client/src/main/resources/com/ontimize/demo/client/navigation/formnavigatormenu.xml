@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Form buttons="no" customfocus="yes" status="no" margin="0;0;0;0">
+	<Column margin="0;0;0;0" expand="yes">
+		<com.ontimize.demo.client.navigation.CustomNavigatorMenuGUI attr="menu" src="com/ontimize/demo/client/navigation/navigation.xml" />
+	</Column >
+</Form>
