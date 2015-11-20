@@ -45,7 +45,8 @@
 	</Menu>
 
 	<Menu attr="Menumanagerusers">
-		<MenuItem attr="Managerusers"></MenuItem>
+		<MenuItem attr="Managerusers"></MenuItem>>
+		<MenuItem attr="managerprofiles" />
 	</Menu>
 	
 	<Menu attr="menumanagercustomerrequest">

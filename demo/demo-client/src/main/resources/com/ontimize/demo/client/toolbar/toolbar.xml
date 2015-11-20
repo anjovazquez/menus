@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <ApplicationToolBar>
-   <ApToolBarButton attr="Managerabout" icon="com/ontimize/gui/images/iconimatia.gif" />
-   <ApToolBarSeparator width="12" />
+<!--    <ApToolBarButton attr="Managerabout" icon="com/ontimize/gui/images/iconimatia.gif" /> -->
+<!--    <ApToolBarSeparator width="12" /> -->
    <ApToolBarButton attr="Chat" icon="com/ontimize/gui/images/toolbar/userconnect2.png" />
    <ApToolBarButton attr="ChangeTableFieldLook" icon="com/ontimize/gui/images/toolbar/window_colors.png" />
 

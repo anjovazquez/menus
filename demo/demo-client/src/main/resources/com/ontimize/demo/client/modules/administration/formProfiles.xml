@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt customfocus="no" title="managerprofiles" entity="EProfiles" keys="idProfile" columns="idProfile">
+	<FormHeader standardbuttons="yes" />
+	<Column expandlast="no">
+		<Row height="10" />
+		<TextDataField attr="idProfile" dim="text" size="36" align="left" required="no" maxlength="32" visible="no"/>
+		<TextDataField attr="profileName" dim="text" size="36" align="left" required="yes" maxlength="32" />		
+		<SplitPane attr="splitformprofile1">
+			<Row>
+				<SplitPane orientation="h" attr="splitformprofile2">
+					<Column expand="yes" title="ClientPermission">
+						<XMLDataField attr="xmlClient" labelsize="12"
+							labelvisible="no" Filas="20" dim="text" align="left" expand="yes" />
+					</Column>
+					<Column expand="yes" title="ServerPermission">
+						<XMLDataField attr="xmlServer" labelsize="12"
+							labelvisible="no" Filas="20" dim="text" required="yes" align="left"
+							expand="yes" />
+					</Column>
+				</SplitPane>
+			</Row>
+			<Row expandlast="yes" expand="yes">
+				<Table entity="EUsers" title="User" cols="User_;NAME"
+					visiblecols="User_;NAME" key="User_" parentkeys="idProfile" form="formUsers.xml" />
+			</Row>
+		</SplitPane>
+
+	</Column>
+</FormExt>

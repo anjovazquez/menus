@@ -1,29 +1,33 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <!-- File to describe the application modules -->
 <MainApplication title="BenMeSabe"
-	logindialogclass="com.ontimize.login.ShapeLoginDialog"
-	splash="com/ontimize/demo/client/images/backSplash.png;4"
+	logindialogclass="com.ontimize.login.ShapeLoginDialog" splash="com/ontimize/demo/client/images/backSplash.png;4"
 	loginicon="com/ontimize/demo/client/images/backLogin.png" icon="$com/ontimize/demo/client/images/ontimize16x16.png"
 	preferences="OntimizeTraining.conf" logintext="session_start"
 	resources="com.ontimize.demo.client.i18n.bundle" locale="es_ES"
 	encrypt="no">
 	<!-- Application configuration params -->
 	<ReferenceLocator remotelocatorname="ServerName"
-		local="false" class="com.ontimize.locator.ReferenceLocator"
-		packageorhostname="localhost" port="49015" checkservermessagesperiod="4000" />
+		local="false" class="com.ontimize.demo.client.MenusReferenceLocator"
+		packageorhostname="localhost" port="49015" checkservermessagesperiod="4000"
+		ClientPermissionColumn="xmlClient" ServerPermissionColumn="xmlServer" />
 	<!-- Menu and toolbar configuration -->
 	<Menu archive="menu/menu.xml" />
 	<MenuListener class="com.ontimize.demo.client.menu.AppMenuListener" />
 	<Toolbar archive="toolbar/toolbar.xml" />
 	<ToolbarListener class="com.ontimize.gui.DefaultToolBarListener" />
-	
+
 	<FormManager id="managermenunavigator" form="navigation/formnavigatormenu.xml"
 		imanager="com.ontimize.demo.client.navigation.IMNavigationMenu" />
-		
+
 	<FormManager id="Managerabout" form="modules/administration/formabout.xml"
 		imanager="com.ontimize.gui.BasicInteractionManager" />
 	<FormManager id="Managerusers" form="modules/administration/formusers.xml"
 		imanager="com.ontimize.gui.BasicInteractionManager" tree="modules/administration/treemanagerusers.xml" />
+
+	<FormManager id="managerprofiles" form="modules/administration/formProfiles.xml"
+		imanager="com.ontimize.gui.BasicInteractionManager" tree="modules/administration/treeProfiles.xml" />
+		
 	<FormManager id="managersqlqueries" form="modules/sql/formSQLQueries.xml"
 		delayedload="yes" imanager="com.ontimize.demo.client.modules.sql.IFMSQLQueries" />
 
@@ -45,9 +49,10 @@
 
 	<FormManager id="managercustomerrequest" form="modules/customer/formcustomerrequest.xml"
 		imanager="com.ontimize.demo.client.modules.customer.IFMCustomerRequest" />
-	<FormManager id="managerfiltercustomerrequest" form="modules/customer/formfiltercustomerrequest.xml"
+	<FormManager id="managerfiltercustomerrequest"
+		form="modules/customer/formfiltercustomerrequest.xml"
 		imanager="com.ontimize.demo.client.modules.customer.IFMFilterCustomerRequest" />
-		
+
 	<FormManager id="managernotification" form="modules/customer/formnotification.xml"
 		imanager="com.ontimize.demo.client.modules.customer.IFMNotification" />
 </MainApplication>

@@ -63,6 +63,15 @@
 			<groupId>com.ontimize</groupId>
 			<artifactId>ontimize-more-plaf-styles-white</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>com.ontimize</groupId>
+			<artifactId>ontimize-more-plaf-styles-white</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.ontimize</groupId>
+			<artifactId>ontimize-more-permission</artifactId>
+			<version>${more-permission.version}</version>
+		</dependency>
 	</dependencies>
 	<profiles>
 		<profile>

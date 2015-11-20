@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
 <Form entity="" buttons="no" status="no">
-   <Column bgcolor="#FFFFFF" title="" layout="flow">
-       <Row />
-       <Label align="center" valign="bottom" attr="InitPage" icon="com/ontimize/gui/images/iconimatia.gif" />
-       <Row />
-   </Column >
+	<Column bgcolor="#FFFFFF" title="" layout="flow">
+		<Row />
+		<Label align="center" valign="bottom" attr="InitPage"
+			icon="com/ontimize/demo/client/images/launcher.png" />
+		<Row />
+	</Column>
+	<Label attr="benmesabe" text="BenMeSabe" dim="text" fontsize="55" align="center"/>
 </Form>
