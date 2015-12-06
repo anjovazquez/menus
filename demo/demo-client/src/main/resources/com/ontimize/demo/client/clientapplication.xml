@@ -27,7 +27,7 @@
 
 	<FormManager id="managerprofiles" form="modules/administration/formProfiles.xml"
 		imanager="com.ontimize.gui.BasicInteractionManager" tree="modules/administration/treeProfiles.xml" />
-		
+
 	<FormManager id="managersqlqueries" form="modules/sql/formSQLQueries.xml"
 		delayedload="yes" imanager="com.ontimize.demo.client.modules.sql.IFMSQLQueries" />
 
@@ -44,7 +44,9 @@
 	<FormManager id="managermenu" form="modules/products/formmenu.xml"
 		imanager="com.ontimize.demo.client.modules.products.IFMMenu" tree="modules/products/treemanagermenu.xml" />
 	<FormManager id="managerorder" form="modules/products/formcompanyorder.xml"
-		imanager="com.ontimize.demo.client.modules.products.IFMCompanyOrder" />
+		imanager="com.ontimize.demo.client.modules.products.IFMCompanyOrder">
+		<FManager fmid="managersendtocustomer" form="formsendtocustomer.xml" />
+	</FormManager>
 
 
 	<FormManager id="managercustomerrequest" form="modules/customer/formcustomerrequest.xml"
@@ -54,5 +56,10 @@
 		imanager="com.ontimize.demo.client.modules.customer.IFMFilterCustomerRequest" />
 
 	<FormManager id="managernotification" form="modules/customer/formnotification.xml"
-		imanager="com.ontimize.demo.client.modules.customer.IFMNotification" />
+		imanager="com.ontimize.demo.client.modules.customer.IFMNotification">
+	</FormManager>
+	
+	<FormManager id="managersendtocustomer" form="modules/customer/formsendtocustomer.xml"
+		imanager="com.ontimize.demo.client.modules.customer.IFMSendToCustomer">
+	</FormManager>
 </MainApplication>

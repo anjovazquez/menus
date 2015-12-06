@@ -13,7 +13,7 @@
 	<Row expand="yes">
 		<Column expand="yes">
 			<Table entity="EOrder" keys="idOrder"
-				cols="idOrder;orderName;tableNo;orderDate" visiblecols="orderName;tableNo;orderDate"
+				cols="idOrder;orderName;tableNo;orderDate;customerToken" visiblecols="orderName;tableNo;orderDate"
 				parentkeys="idCompany" form="formorder.xml" />
 
 		</Column>

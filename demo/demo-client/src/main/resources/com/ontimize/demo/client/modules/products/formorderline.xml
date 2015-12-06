@@ -10,7 +10,7 @@
 	<ReferenceExtDataField text="idOrder" attr="idOrder"
 		entity="EOrder" cod="idOrder" cols="idOrder;orderName"
 		visiblecols="orderName" dim="text" align="left" labelsize="16"
-		visible="yes" />
+		visible="yes" codnumber="yes" codnumberclass="BigDecimal"/>
 		
 		
 	<ReferenceExtDataField text="idProduct" attr="idProduct"

@@ -74,7 +74,8 @@ public class NotificationManager {
 
 	public void sendNotificationToUser(String token, String jsonData) {
 		String jtemplate = loadTemplateData();
-		jtemplate = jtemplate.replace("$data", jsonData);
+		String jsonString = "\"message\":\""+jsonData+"\"";
+		jtemplate = jtemplate.replace("$data", jsonString);
 		jtemplate = jtemplate.replace("$token", token);
 		RequestBody body = RequestBody.create(JSON, jtemplate);
 		Request request = new Request.Builder()
@@ -96,6 +97,6 @@ public class NotificationManager {
 	
 	public static void main(String[] args) {
 		String json = "\"message\": \"Su pedido está listo, pase a recogerlo\"";
-		NotificationManager.getInstance().sendNotificationToUser("fBK1Pal0HwA:APA91bFNK0N6hGHNxrWxvVQgTpivUqey1W5JMrMORuzFlrzK3G8fdUKDo5P1CsCQua0p7UxvkLuzee1ZFWaXXF_5VpPQw0WflEY4EPzbv4zQrvztLGFNI4XOjIbdVlpYDLNS9orwGta_", json);
+		NotificationManager.getInstance().sendNotificationToUser("eRYjuveC5m8:APA91bHyVN_5M-APyHaS7NV2lw6JDzgZiKomTHzvugYUMkpy_5ljzy9yVZY6x_qoTWG7MfZANTe9FfCZ0693Lj5JlrvUg1ig1_ZQvjkh4EV8i42cp6pwOvZUAbWh9OA4tEUF1pogjaMt", json);
 	}
 }

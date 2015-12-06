@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<FormExt entity="ENotification" keys="idNotification" columns="token"
+	title="formnotification.xml" buttons="no" separator="no">
+	<FormHeader standardbuttons="no" />
+
+	<IntegerDataField text="idNotification" attr="idNotification"
+		dim="text" align="left" labelsize="16" visible="no" />
+
+	<TextDataField text="token" attr="token" dim="text"
+		align="left" labelsize="16" rows="5" />
+
+	<TextComboDataField attr="data" text="data"
+		values="Su pedido esta listo;Enseguida atendemos sus dudas;Recoja su pedido"
+		dim="text" align="left" labelsize="16" />
+
+	<Button key="bSend" text="Enviar" />
+</FormExt>
